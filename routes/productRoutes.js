@@ -12,6 +12,18 @@ productRouter.get("/", async (req, res) => {
     res.send({ msg: "Smothing went Wrong" });
   }
 });
+
+productRouter.get("/:category", async (req, res) => {
+  try {
+    const products = await ProductModel.find();
+    res.send(products);
+  } catch (error) {
+    console.log(error);
+    res.send({ msg: "Smothing went Wrong" });
+  }
+});
+
+
 productRouter.post("/createmany", async (req, res) => {
   const payload = req.body;
   try {
