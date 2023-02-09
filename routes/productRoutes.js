@@ -11,6 +11,14 @@ productRouter.get("/data", async (req, res) => {
     let data = await ProductModel.find().sort({ price: -1 });
     res.send(data);
   } 
+  else if (req.query.sort==="rating") {
+    let data = await ProductModel.find().sort({ rating: -1 });
+    res.send(data);
+  }
+  else if (req.query.sort==="descount") {
+    let data = await ProductModel.find().sort({ discount: -1 });
+    res.send(data);
+  } 
   else if (req.query.price === "below-500") {
     let filter = await ProductModel.find({
       $and: [{ price: { $gt: 0 } }, { price: { $lt: 500 } }],
@@ -53,14 +61,7 @@ productRouter.get("/data", async (req, res) => {
     res.send(data);
   }
   
-  else if (req.query.rating) {
-    let data = await ProductModel.find().sort({ rating: -1 });
-    res.send(data);
-  }
-  else if (req.query.decount) {
-    let data = await ProductModel.find().sort({ discount: -1 });
-    res.send(data);
-  } else if (req.query.page) {
+  else if (req.query.page) {
     const { page, limit } = req.query;
     if (!page) {
       page = 1;
