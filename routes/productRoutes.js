@@ -4,32 +4,62 @@ const { ProductModel } = require("../models/Product.model");
 const productRouter = express.Router();
 
 productRouter.get("/data", async (req, res) => {
-  if (req.query.price === "price_low_to_high") {
+  if (req.query.sort === "price_low_to_high") {
     let data = await ProductModel.find().sort({ price: 1 });
     res.send(data);
-  } else if (req.query.price === "price_high_to_low") {
+  } else if (req.query.sort === "price_high_to_low") {
     let data = await ProductModel.find().sort({ price: -1 });
     res.send(data);
   } 
+  else if (req.query.price === "below-500") {
+    let filter = await ProductModel.find({
+      $and: [{ price: { $gt: 0 } }, { price: { $lt: 500 } }],
+    });
+    res.send(filter);
+  } else if (req.query.price === "below-400") {
+    let filter = await ProductModel.find({
+      $and: [{ price: { $gt: 0 } }, { price: { $lt: 400 } }],
+    });
+    res.send(filter);
+  } else if (req.query.price === "below-300") {
+    let filter = await ProductModel.find({
+      $and: [{ price: { $gt: 0 } }, { price: { $lt: 300 } }],
+    });
+    res.send(filter);
+  } 
+  else if (req.query.price === "below-200") {
+    let filter = await ProductModel.find({
+      $and: [{ price: { $gt: 0 } }, { price: { $lt: 200 } }],
+    });
+    res.send(filter);
+  }
+  else if (req.query.price === "below-99") {
+    let filter = await ProductModel.find({
+      $and: [{ price: { $gt: 0 } }, { price: { $lt: 99 } }],
+    });
+    res.send(filter);
+  }else if (req.query.price === "above 500") {
+    let filter = await ProductModel.find({ price: { $gt: 500 } });
+    res.send(filter);
+  }
   else if (req.query.category) {
     let data = await ProductModel.find({subcategory:
       req.query.category})
     
     res.send(data);
   }
-  else if (req.query.category === "covideesential") {
-    let data = await ProductModel.find({category:"covideesential"})
+  else if (req.query.subcategory ) {
+    let data = await ProductModel.find({subcategory:req.query.subcategory})
     res.send(data);
   }
   
-  else if (req.query.popularBy === "popular") {
-    const { popularBy } = req.query;
-    try {
-      let populatby = await ProductModel.find().sort({ rating: -1 });
-      res.send(populatby);
-    } catch (err) {
-      res.send(err);
-    }
+  else if (req.query.rating) {
+    let data = await ProductModel.find().sort({ rating: -1 });
+    res.send(data);
+  }
+  else if (req.query.decount) {
+    let data = await ProductModel.find().sort({ discount: -1 });
+    res.send(data);
   } else if (req.query.page) {
     const { page, limit } = req.query;
     if (!page) {
@@ -50,31 +80,6 @@ productRouter.get("/data", async (req, res) => {
 });
 
 
-productRouter.get("/filter", async (req, res) => {
-  try {
-    if (req.query.price === "below-500") {
-      let filter = await ProductModel.find({
-        $and: [{ price: { $gt: 0 } }, { price: { $lt: 500 } }],
-      });
-      res.send(filter);
-    } else if (req.query.price === "below-400") {
-      let filter = await ProductModel.find({
-        $and: [{ price: { $gt: 0 } }, { price: { $lt: 400 } }],
-      });
-      res.send(filter);
-    } else if (req.query.price === "below-300") {
-      let filter = await ProductModel.find({
-        $and: [{ price: { $gt: 0 } }, { price: { $lt: 300 } }],
-      });
-      res.send(filter);
-    } else if (req.query.price === "above 500") {
-      let filter = await ProductModel.find({ price: { $gt: 500 } });
-      res.send(filter);
-    }
-  } catch (err) {
-    res.send(`error:${err}`);
-  }
-});
 
 productRouter.get("/search", async (req, res) => {
   if (req.query.name != undefined) {
