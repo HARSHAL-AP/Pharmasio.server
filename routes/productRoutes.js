@@ -43,7 +43,7 @@ productRouter.get("/data", async (req, res) => {
     res.send(filter);
   }
   else if (req.query.category) {
-    let data = await ProductModel.find({subcategory:
+    let data = await ProductModel.find({category:
       req.query.category})
     
     res.send(data);
