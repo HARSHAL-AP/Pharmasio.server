@@ -7,12 +7,22 @@ require("dotenv").config();
 const userRoute = express.Router();
 
 userRoute.post("/register", async (req, res) => {
-  const {first_name,last_name, email,password, gender, address, phone_number } = req.body;
-  const user=await UserModel.find({email:email,phone_number:phone_number})
-  if(user.length>0){
-    res.send({msg:"User allready registerd",Succsess: false})
-  }
-  else{
+  const {
+    first_name,
+    last_name,
+    email,
+    password,
+    gender,
+    address,
+    phone_number,
+  } = req.body;
+  const user = await UserModel.find({
+    email: email,
+    phone_number: phone_number,
+  });
+  if (user.length > 0) {
+    res.send({ msg: "User allready registerd", Succsess: false });
+  } else {
     try {
       bycript.hash(password, 5, async (err, secure_password) => {
         if (err) {
@@ -26,9 +36,10 @@ userRoute.post("/register", async (req, res) => {
             gender,
             address,
             phone_number,
-            ocupation,
-            orders,
-            created_at:new Date(),
+            cartitems: [],
+            labtest_items: [],
+            orders:[],
+            created_at: new Date(),
           });
           await user.save();
           res.send({ msg: " User Registerd successfully", Succsess: true });
@@ -38,12 +49,7 @@ userRoute.post("/register", async (req, res) => {
       res.send({ msg: "Error in registring the user", Succsess: false });
       console.log(error);
     }
-    
   }
-
-
-
-  
 });
 
 userRoute.post("/login", async (req, res) => {
@@ -56,9 +62,23 @@ userRoute.post("/login", async (req, res) => {
       bycript.compare(password, hashed_pass, (err, result) => {
         if (result) {
           const token = jwt.sign({ userID: user[0]._id }, process.env.key);
-          res.send({ msg: "Login Successfull", token: token ,Succsess: true});
+          res.send({ msg: "Login Successfull", token: token, Succsess: true });
         } else {
-          res.send({ msg: "Wrong Credentials", Succsess: false });
+          res.send({
+            msg: "Wrong Credentials",
+            Succsess: false,
+            User: {
+              first_name: user[0].first_name,
+              last_name: user[0].last_name,
+              gender: user[0].gender,
+              birthdate: user[0].birthdate,
+              address: user[0].address,
+              phone_number:user[0].phone_number,
+              cartitem:user[0].cartitem,
+              labtest_items:user[0].labtest_items,
+              orders:user[0].orders
+            },
+          });
         }
       });
     } else {
@@ -85,7 +105,7 @@ userRoute.patch("/updateuser/:id", async (req, res) => {
   const id = req.params.id;
   const payload = req.body;
   try {
-    await UserModel.findByIdAndUpdate({ _id: id },payload);
+    await UserModel.findByIdAndUpdate({ _id: id }, payload);
     res.send("Updated The user");
   } catch (error) {
     console.log(error);
