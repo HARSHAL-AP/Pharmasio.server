@@ -5,10 +5,10 @@ const productRouter = express.Router();
 
 productRouter.get("/data", async (req, res) => {
   if (req.query.sort === "price_low_to_high") {
-    let data = await ProductModel.find().sort({ price: 1 });
+    let data = await ProductModel.find().sort({ saleprice: 1 });
     res.send(data);
   } else if (req.query.sort === "price_high_to_low") {
-    let data = await ProductModel.find().sort({ price: -1 });
+    let data = await ProductModel.find().sort({ saleprice: -1 });
     res.send(data);
   } 
   else if (req.query.sort==="rating") {
@@ -21,33 +21,33 @@ productRouter.get("/data", async (req, res) => {
   } 
   else if (req.query.price === "below-500") {
     let filter = await ProductModel.find({
-      $and: [{ price: { $gt: 0 } }, { price: { $lt: 500 } }],
+      $and: [{ saleprice: { $gt: 0 } }, { saleprice: { $lt: 500 } }],
     });
     res.send(filter);
   } else if (req.query.price === "below-400") {
     let filter = await ProductModel.find({
-      $and: [{ price: { $gt: 0 } }, { price: { $lt: 400 } }],
+      $and: [{ saleprice: { $gt: 0 } }, { saleprice: { $lt: 400 } }],
     });
     res.send(filter);
   } else if (req.query.price === "below-300") {
     let filter = await ProductModel.find({
-      $and: [{ price: { $gt: 0 } }, { price: { $lt: 300 } }],
+      $and: [{ saleprice: { $gt: 0 } }, { saleprice: { $lt: 300 } }],
     });
     res.send(filter);
   } 
   else if (req.query.price === "below-200") {
     let filter = await ProductModel.find({
-      $and: [{ price: { $gt: 0 } }, { price: { $lt: 200 } }],
+      $and: [{ saleprice: { $gt: 0 } }, { saleprice: { $lt: 200 } }],
     });
     res.send(filter);
   }
   else if (req.query.price === "below-99") {
     let filter = await ProductModel.find({
-      $and: [{ price: { $gt: 0 } }, { price: { $lt: 99 } }],
+      $and: [{ saleprice: { $gt: 0 } }, { saleprice: { $lt: 99 } }],
     });
     res.send(filter);
   }else if (req.query.price === "above 500") {
-    let filter = await ProductModel.find({ price: { $gt: 500 } });
+    let filter = await ProductModel.find({ saleprice: { $gt: 500 } });
     res.send(filter);
   }
   else if (req.query.category) {
