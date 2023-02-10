@@ -7,42 +7,56 @@ require("dotenv").config();
 const userRoute = express.Router();
 
 userRoute.post("/register", async (req, res) => {
-  const { name, email, pass, gender, address, mobailno, ocupation } = req.body;
-  try {
-    bycript.hash(pass, 5, async (err, secure_password) => {
-      if (err) {
-        console.log(err);
-      } else {
-        const user = new UserModel({
-          name,
-          email,
-          pass: secure_password,
-          gender,
-          address,
-          mobailno,
-          ocupation,
-        });
-        await user.save();
-        res.send({ msg: "Registerd", Succsess: true });
-      }
-    });
-  } catch (error) {
-    res.send({ msg: "Error in registring the user", Succsess: false });
-    console.log(error);
+  const {first_name,last_name, email,password, gender, address, phone_number } = req.body;
+  const user=await UserModel.find({email:email,phone_number:phone_number})
+  if(user.length>0){
+    res.send({msg:"User allready registerd",Succsess: false})
   }
+  else{
+    try {
+      bycript.hash(password, 5, async (err, secure_password) => {
+        if (err) {
+          console.log(err);
+        } else {
+          const user = new UserModel({
+            first_name,
+            last_name,
+            email,
+            password: secure_password,
+            gender,
+            address,
+            phone_number,
+            ocupation,
+            orders,
+            created_at:new Date(),
+          });
+          await user.save();
+          res.send({ msg: " User Registerd successfully", Succsess: true });
+        }
+      });
+    } catch (error) {
+      res.send({ msg: "Error in registring the user", Succsess: false });
+      console.log(error);
+    }
+    
+  }
+
+
+
+  
 });
 
 userRoute.post("/login", async (req, res) => {
   const { email, pass } = req.body;
-  console.log(email, pass);
+  console.log(email, password);
   try {
     const user = await UserModel.find({ email });
-    const hashed_pass = user[0].pass;
+    const hashed_pass = user[0].password;
     if (user.length > 0) {
-      bycript.compare(pass, hashed_pass, (err, result) => {
+      bycript.compare(password, hashed_pass, (err, result) => {
         if (result) {
           const token = jwt.sign({ userID: user[0]._id }, process.env.key);
-          res.send({ msg: "Login Successfulll", token: token });
+          res.send({ msg: "Login Successfull", token: token ,Succsess: true});
         } else {
           res.send({ msg: "Wrong Credentials", Succsess: false });
         }
