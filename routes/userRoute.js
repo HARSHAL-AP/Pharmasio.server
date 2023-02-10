@@ -62,22 +62,22 @@ userRoute.post("/login", async (req, res) => {
       bycript.compare(password, hashed_pass, (err, result) => {
         if (result) {
           const token = jwt.sign({ userID: user[0]._id }, process.env.key);
-          res.send({ msg: "Login Successfull", token: token, Succsess: true });
+          res.send({ msg: "Login Successfull", token: token, Succsess: true ,User: {
+            first_name: user[0].first_name,
+            last_name: user[0].last_name,
+            gender: user[0].gender,
+            birthdate: user[0].birthdate,
+            address: user[0].address,
+            phone_number:user[0].phone_number,
+            cartitem:user[0].cartitem,
+            labtest_items:user[0].labtest_items,
+            orders:user[0].orders
+          }});
         } else {
           res.send({
             msg: "Wrong Credentials",
             Succsess: false,
-            User: {
-              first_name: user[0].first_name,
-              last_name: user[0].last_name,
-              gender: user[0].gender,
-              birthdate: user[0].birthdate,
-              address: user[0].address,
-              phone_number:user[0].phone_number,
-              cartitem:user[0].cartitem,
-              labtest_items:user[0].labtest_items,
-              orders:user[0].orders
-            },
+            
           });
         }
       });
