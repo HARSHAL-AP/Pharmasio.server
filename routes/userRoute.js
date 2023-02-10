@@ -53,7 +53,7 @@ userRoute.post("/register", async (req, res) => {
 });
 
 userRoute.post("/login", async (req, res) => {
-  const { email, pass } = req.body;
+  const { email, password } = req.body;
   console.log(email, password);
   try {
     const user = await UserModel.find({ email });
