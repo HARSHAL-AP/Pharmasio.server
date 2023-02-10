@@ -53,8 +53,8 @@ userRoute.post("/register", async (req, res) => {
 });
 
 userRoute.post("/login", async (req, res) => {
-  const { email, pass } = req.body;
-  console.log(email, password);
+  const { email, password } = req.body;
+  console.log(email,password)
   try {
     const user = await UserModel.find({ email });
     const hashed_pass = user[0].password;
@@ -92,7 +92,7 @@ userRoute.post("/login", async (req, res) => {
 
 userRoute.delete("/deletuser/:id", async (req, res) => {
   const id = req.params.id;
-
+console.log(id)
   try {
     await UserModel.findByIdAndDelete({ _id: id });
     res.send("Deleted The user");
