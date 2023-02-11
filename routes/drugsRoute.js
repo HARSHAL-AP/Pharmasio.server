@@ -3,13 +3,21 @@ const express = require("express");
 const { DrugsModel } = require("../models/Drug.model");
 const drugRouter = express.Router();
 
-drugRouter.get("/", async (req, res) => {
+drugRouter.get("/:alphabet", async (req, res) => {
+  const alphabet=req.params.alphabet;
+  const page=req.query.page||1
+  const limit=req.query.limit||20
+
     try {
-        const data = await DrugsModel.find();
-        res.send(data);
-      } catch (err) {
-        res.send(`error:${err}`);
-      }
+      const data =await DrugsModel.find({
+        drug_name: { $regex:"^"+alphabet},
+    }).skip((page-1)*limit).limit(limit)
+    console.log(data.length)
+      res.send(data);
+    } catch (err) {
+      res.send(`error:${err}`);
+    }
+  
 });
 drugRouter.get("/search", async (req, res) => {
     if (req.query.name != undefined) {
@@ -22,7 +30,9 @@ drugRouter.get("/search", async (req, res) => {
       } catch (err) {
         res.send(`error:${err}`);
       }
-    } else {
+    }
+ 
+     else {
       try {
         const data = await DrugsModel.find();
         res.send(data);
