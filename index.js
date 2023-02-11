@@ -6,6 +6,8 @@ const {productRouter}=require("./routes/productRoutes")
 const {labtestRouter}=require("./routes/labtestRoute")
 const {productorderRouter}=require("./routes/productorderRoute")
 const {labtestorderRouter}=require("./routes/labtestorderRoute")
+const {drugRouter}=require("./routes/drugsRoute")
+
 const { authonticate}=require("./midlewere/authonticate.middleware")
 require("dotenv").config()
 const cors=require("cors")
@@ -23,6 +25,7 @@ app.get("/",(req,res)=>{
 })
 
 app.use("/product",productRouter)
+app.use("/drug",drugRouter)
 app.use("/productorder",productorderRouter)
 app.use("/labtestorder",labtestorderRouter)
 app.use("/labtests",labtestRouter)
