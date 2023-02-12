@@ -38,7 +38,7 @@ userRoute.post("/register", async (req, res) => {
             phone_number,
             cartitems: [],
             labtest_items: [],
-            orders:[],
+            orders: [],
             created_at: new Date(),
           });
           await user.save();
@@ -54,7 +54,7 @@ userRoute.post("/register", async (req, res) => {
 
 userRoute.post("/login", async (req, res) => {
   const { email, password } = req.body;
-  console.log(email,password)
+  console.log(email, password);
   try {
     const user = await UserModel.find({ email });
     const hashed_pass = user[0].password;
@@ -62,22 +62,27 @@ userRoute.post("/login", async (req, res) => {
       bycript.compare(password, hashed_pass, (err, result) => {
         if (result) {
           const token = jwt.sign({ userID: user[0]._id }, process.env.key);
-          res.send({ msg: "Login Successfull", token: token, Succsess: true ,User: {
-            first_name: user[0].first_name,
-            last_name: user[0].last_name,
-            gender: user[0].gender,
-            birthdate: user[0].birthdate,
-            address: user[0].address,
-            phone_number:user[0].phone_number,
-            cartitem:user[0].cartitem,
-            labtest_items:user[0].labtest_items,
-            orders:user[0].orders
-          }});
+          console.log(token)
+          res.send({
+            msg: "Login Successfull",
+            token: token,
+            Succsess: true,
+            User: {
+              first_name: user[0].first_name,
+              last_name: user[0].last_name,
+              gender: user[0].gender,
+              birthdate: user[0].birthdate,
+              address: user[0].address,
+              phone_number: user[0].phone_number,
+              cartitem: user[0].cartitems,
+              labtest_items: user[0].labtest_items,
+              orders: user[0].orders,
+            },
+          });
         } else {
           res.send({
             msg: "Wrong Credentials",
             Succsess: false,
-            
           });
         }
       });
@@ -92,7 +97,7 @@ userRoute.post("/login", async (req, res) => {
 
 userRoute.delete("/deletuser/:id", async (req, res) => {
   const id = req.params.id;
-console.log(id)
+  console.log(id);
   try {
     await UserModel.findByIdAndDelete({ _id: id });
     res.send("Deleted The user");
