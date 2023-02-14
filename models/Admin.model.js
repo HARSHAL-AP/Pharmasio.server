@@ -1,13 +1,23 @@
 const mongoose = require("mongoose");
 
 const adminSchema = mongoose.Schema({
-  name: String,
+  
   email: String,
-  pass: String,
+  password: String,
+  first_name: String,
+  last_name: String,
   gender: String,
-  isadmin:Boolean,
-  mobailno: Number,
- 
+  birthdate: Date,
+  address: {
+    street_address: String,
+    city: String,
+    state: String,
+    zipcode: String,
+    country: String,
+  },
+  phone_number: String,
+  isAdmin:Boolean,
+  created_at: Date,
 });
 
 const AdminModel=mongoose.model("admin",adminSchema)

@@ -1,9 +1,12 @@
 const express = require("express");
 
 const {  ProductorderModel } = require("../models/Order.model");
+const {adminauthonticate}=require("../midlewere/adminauth.middlewere")
+const { userauthonticate}=require("../midlewere/authonticate.middleware")
+
 const productorderRouter = express.Router();
 
-productorderRouter.get("/", async (req, res) => {
+productorderRouter.get("/",adminauthonticate, async (req, res) => {
     try {
         const data = await ProductorderModel.find();
         res.send(data);
@@ -13,7 +16,17 @@ productorderRouter.get("/", async (req, res) => {
 });
 
 
-productorderRouter.get("/:order_number", async (req, res) => {
+productorderRouter.get("/admin/:order_number",adminauthonticate, async (req, res) => {
+  const id = req.params.order_number;
+  try {
+    const order = await ProductorderModel.findById({order_number:id});
+    res.send(order);
+  } catch (error) {
+    console.log(error);
+    res.send({ msg: "Smothing went Wrong" });
+  }
+});
+productorderRouter.get("/user/:order_number",userauthonticate, async (req, res) => {
   const id = req.params.order_number;
   try {
     const order = await ProductorderModel.findById({order_number:id});
@@ -26,8 +39,7 @@ productorderRouter.get("/:order_number", async (req, res) => {
 
 
 
-
-productorderRouter.post("/create", async (req, res) => {
+productorderRouter.post("/create",userauthonticate, async (req, res) => {
   const payload = req.body;
   try {
     const new_order = new ProductorderModel(payload);
@@ -39,7 +51,7 @@ productorderRouter.post("/create", async (req, res) => {
   }
 });
 
-productorderRouter.patch("/update/:order_number", async (req, res) => {
+productorderRouter.patch("/update/:order_number",adminauthonticate, async (req, res) => {
   const payload = req.body;
   const id = req.params.order_number;
 
@@ -52,7 +64,7 @@ productorderRouter.patch("/update/:order_number", async (req, res) => {
   }
 });
 
-productorderRouter.delete("/delet/:order_number", async (req, res) => {
+productorderRouter.delete("/delet/:order_number",adminauthonticate, async (req, res) => {
   const id = req.params.order_number;
 
   try {

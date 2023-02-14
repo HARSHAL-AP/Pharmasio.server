@@ -1,5 +1,6 @@
 const express = require("express");
-
+const {adminauthonticate}=require("../midlewere/adminauth.middlewere")
+const { userauthonticate}=require("../midlewere/authonticate.middleware")
 const {  LabtestorderModel } = require("../models/LabtestOrder.model");
 const labtestorderRouter = express.Router();
 
@@ -27,7 +28,7 @@ labtestorderRouter.get("/:order_number", async (req, res) => {
 
 
 
-labtestorderRouter.post("/create", async (req, res) => {
+labtestorderRouter.post("/create",userauthonticate, async (req, res) => {
   const payload = req.body;
   try {
     const new_order = new LabtestorderModel(payload);
@@ -39,7 +40,7 @@ labtestorderRouter.post("/create", async (req, res) => {
   }
 });
 
-labtestorderRouter.patch("/update/:order_number", async (req, res) => {
+labtestorderRouter.patch("/update/:order_number",userauthonticate, async (req, res) => {
   const payload = req.body;
   const id = req.params.order_number;
 
@@ -52,7 +53,7 @@ labtestorderRouter.patch("/update/:order_number", async (req, res) => {
   }
 });
 
-labtestorderRouter.delete("/delet/:order_number", async (req, res) => {
+labtestorderRouter.delete("/delet/:order_number",userauthonticate, async (req, res) => {
   const id = req.params.order_number;
 
   try {
