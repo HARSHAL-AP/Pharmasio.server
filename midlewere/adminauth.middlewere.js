@@ -1,9 +1,10 @@
 const jwt=require("jsonwebtoken");
 require("dotenv").config();
 
-const userauthonticate=(req,res,next)=> {
+const adminauthonticate=(req,res,next)=> {
   const token=req.headers.authorization
-  if(token){
+  const isAdmin=req.headers.isAdmin
+  if(token&&isAdmin){
     const decode=jwt.verify(token,process.env.key)
     if(decode){
         const userId=decode.userId
@@ -12,15 +13,15 @@ const userauthonticate=(req,res,next)=> {
         next()
     }
     else{
-      return res.status(401).send({ message: 'Unauthorized Acsess' });
+      return res.status(401).send({ message: 'Unauthorized' });
     }
   }
   else{
-    return res.status(401).send({ message: 'Unauthorized Acsess' });
+    return res.status(401).send({ message: 'Unauthorized' });
   }
 }
 
 
 module.exports={
-  userauthonticate
+  adminauthonticate
 }

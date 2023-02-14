@@ -2,6 +2,7 @@ const express = require("express");
 const { UserModel } = require("../models/User.model");
 const bycript = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const {userauthonticate}=require("../midlewere/authonticate.middleware")
 require("dotenv").config();
 
 const userRoute = express.Router();
@@ -95,7 +96,7 @@ userRoute.post("/login", async (req, res) => {
   }
 });
 
-userRoute.delete("/deletuser/:id", async (req, res) => {
+userRoute.delete("/deletuser/:id",userauthonticate, async (req, res) => {
   const id = req.params.id;
   console.log(id);
   try {
@@ -106,7 +107,7 @@ userRoute.delete("/deletuser/:id", async (req, res) => {
     res.send({ msg: "Smothing went Wrong" });
   }
 });
-userRoute.patch("/updateuser/:id", async (req, res) => {
+userRoute.patch("/updateuser/:id",userauthonticate, async (req, res) => {
   const id = req.params.id;
   const payload = req.body;
   try {

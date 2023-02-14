@@ -1,83 +1,69 @@
 const express = require("express");
-
+const {adminauthonticate}=require("../midlewere/adminauth.middlewere")
 const { ProductModel } = require("../models/Product.model");
 const productRouter = express.Router();
 
-productRouter.get("/data", async (req, res) => {
-  if (req.query.sort === "price_low_to_high") {
-    let data = await ProductModel.find().sort({ saleprice: 1 });
-    res.send(data);
-  } else if (req.query.sort === "price_high_to_low") {
-    let data = await ProductModel.find().sort({ saleprice: -1 });
-    res.send(data);
-  } 
-  else if (req.query.sort==="rating") {
-    let data = await ProductModel.find().sort({ rating: -1 });
-    res.send(data);
+productRouter.get("/:category", async (req, res) => {
+  const category = req.params.category;
+  const page = req.query.page || 1;
+  const limit = req.query.limit || 20;
+  let data;
+
+  switch (req.query.sort) {
+    case "price_low_to_high":
+      data = await ProductModel.find({ category: category })
+        .sort({ saleprice: 1 })
+        .skip((page - 1) * limit)
+        .limit(limit);
+      break;
+
+    case "price_high_to_low":
+      data = await ProductModel.find({ category: category })
+        .sort({ saleprice: -1 })
+        .skip((page - 1) * limit)
+        .limit(limit);
+      break;
+
+    case "rating":
+      data = await ProductModel.find({ category: category })
+        .sort({ rating: -1 })
+        .skip((page - 1) * limit)
+        .limit(limit);
+      break;
+
+    case "discount":
+      data = await ProductModel.find({ category: category })
+        .sort({ discount: -1 })
+        .skip((page - 1) * limit)
+        .limit(limit);
+      break;
+
+    default:
+      if (req.query.price && req.query.price.startsWith("below-")) {
+        const price = parseInt(req.query.price.substring(6));
+        if (!isNaN(price)) {
+          data = await ProductModel.find({
+            $and: [{ saleprice: { $gt: 0 } }, { saleprice: { $lt: price }, category: category }],
+          })
+            .skip((page - 1) * limit)
+            .limit(limit);
+        }
+      } else if (req.query.price === "above-500") {
+        data = await ProductModel.find({ saleprice: { $gt: 500 }, category: category })
+          .skip((page - 1) * limit)
+          .limit(limit);
+      } else if (req.query.subcategory) {
+        data = await ProductModel.find({ subcategory: req.query.subcategory, category: category })
+          .skip((page - 1) * limit)
+          .limit(limit);
+      } else {
+        data = await ProductModel.find({ category: category })
+          .skip((page - 1) * limit)
+          .limit(limit);
+      }
   }
-  else if (req.query.sort==="descount") {
-    let data = await ProductModel.find().sort({ discount: -1 });
-    res.send(data);
-  } 
-  else if (req.query.price === "below-500") {
-    let filter = await ProductModel.find({
-      $and: [{ saleprice: { $gt: 0 } }, { saleprice: { $lt: 500 } }],
-    });
-    res.send(filter);
-  } else if (req.query.price === "below-400") {
-    let filter = await ProductModel.find({
-      $and: [{ saleprice: { $gt: 0 } }, { saleprice: { $lt: 400 } }],
-    });
-    res.send(filter);
-  } else if (req.query.price === "below-300") {
-    let filter = await ProductModel.find({
-      $and: [{ saleprice: { $gt: 0 } }, { saleprice: { $lt: 300 } }],
-    });
-    res.send(filter);
-  } 
-  else if (req.query.price === "below-200") {
-    let filter = await ProductModel.find({
-      $and: [{ saleprice: { $gt: 0 } }, { saleprice: { $lt: 200 } }],
-    });
-    res.send(filter);
-  }
-  else if (req.query.price === "below-99") {
-    let filter = await ProductModel.find({
-      $and: [{ saleprice: { $gt: 0 } }, { saleprice: { $lt: 99 } }],
-    });
-    res.send(filter);
-  }else if (req.query.price === "above 500") {
-    let filter = await ProductModel.find({ saleprice: { $gt: 500 } });
-    res.send(filter);
-  }
-  else if (req.query.category) {
-    let data = await ProductModel.find({category:
-      req.query.category})
-    
-    res.send(data);
-  }
-  else if (req.query.subcategory ) {
-    let data = await ProductModel.find({subcategory:req.query.subcategory})
-    res.send(data);
-  }
-  
-  else if (req.query.page) {
-    const { page, limit } = req.query;
-    if (!page) {
-      page = 1;
-    }
-    const newlimit = Number(limit);
-    let size = (page - 1) * limit;
-    let paginated = await ProductModel.find({}).limit(newlimit).skip(size);
-    res.send(paginated);
-  } else {
-    try {
-      const data = await ProductModel.find();
-      res.send(data);
-    } catch (err) {
-      res.send(`error:${err}`);
-    }
-  }
+
+  res.send(data);
 });
 
 
@@ -122,7 +108,7 @@ productRouter.get("/byid/:id", async (req, res) => {
 
 
 
-productRouter.post("/create", async (req, res) => {
+productRouter.post("/create",adminauthonticate, async (req, res) => {
   const payload = req.body;
   try {
     const new_products = new ProductModel(payload);
@@ -134,7 +120,7 @@ productRouter.post("/create", async (req, res) => {
   }
 });
 
-productRouter.patch("/update/:id", async (req, res) => {
+productRouter.patch("/update/:id",adminauthonticate, async (req, res) => {
   const payload = req.body;
   const id = req.params.id;
 
@@ -147,7 +133,7 @@ productRouter.patch("/update/:id", async (req, res) => {
   }
 });
 
-productRouter.delete("/remove/:id", async (req, res) => {
+productRouter.delete("/remove/:id",adminauthonticate, async (req, res) => {
   const id = req.params.id;
 
   try {

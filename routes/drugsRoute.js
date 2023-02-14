@@ -1,5 +1,6 @@
 const express = require("express");
-
+const {adminauthonticate}=require("../midlewere/adminauth.middlewere")
+const { userauthonticate}=require("../midlewere/authonticate.middleware")
 const { DrugsModel } = require("../models/Drug.model");
 const drugRouter = express.Router();
 
@@ -57,7 +58,7 @@ drugRouter.get("/byid/:id", async (req, res) => {
 
 
 
-drugRouter.post("/create", async (req, res) => {
+drugRouter.post("/create",adminauthonticate, async (req, res) => {
   const payload = req.body;
   try {
     const new_products = new DrugsModel(payload);
@@ -69,7 +70,7 @@ drugRouter.post("/create", async (req, res) => {
   }
 });
 
-drugRouter.patch("/update/:id", async (req, res) => {
+drugRouter.patch("/update/:id",adminauthonticate, async (req, res) => {
   const payload = req.body;
   const id = req.params.id;
 
@@ -82,7 +83,7 @@ drugRouter.patch("/update/:id", async (req, res) => {
   }
 });
 
-drugRouter.delete("/remove/:id", async (req, res) => {
+drugRouter.delete("/remove/:id",adminauthonticate, async (req, res) => {
   const id = req.params.id;
 
   try {
