@@ -7,7 +7,7 @@ const {labtestRouter}=require("./routes/labtestRoute")
 const {productorderRouter}=require("./routes/productorderRoute")
 const {labtestorderRouter}=require("./routes/labtestorderRoute")
 const {drugRouter}=require("./routes/drugsRoute")
-
+const {preisRouter}=require("./routes/priscriptionRoute")
 const { authonticate}=require("./midlewere/authonticate.middleware")
 require("dotenv").config()
 const cors=require("cors")
@@ -31,7 +31,7 @@ app.use("/labtestorder",labtestorderRouter)
 app.use("/labtests",labtestRouter)
 app.use("/user",userRoute)
 app.use("/admin",adminRoute)
-
+app.use("/prescription",preisRouter)
 
 app.listen(process.env.port,async()=>{
 try {
