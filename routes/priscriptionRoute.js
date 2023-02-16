@@ -15,10 +15,10 @@ preisRouter.post("/upload", upload.single("file"), async (req, res) => {
   await prescriptionImage.save((err, result) => {
     if (err) {
       console.error(err);
-      return res.status(500).json({ message: 'Error saving prescription image to database' });
+      return res.status(500).send({ message: 'Error saving prescription image to database' });
     }
 
-    res.status(200).json({ id: result._id });
+    res.status(200).send({ id: result._id });
   });
 });
 
@@ -26,11 +26,11 @@ preisRouter.get("/files/:id", async (req, res) => {
   PresctiptionmModel.findById(req.params.id, (err, result) => {
     if (err) {
       console.error(err);
-      return res.status(500).json({ message: 'Error retrieving prescription image from database' });
+      return res.status(500).send({ message: 'Error retrieving prescription image from database' });
     }
 
     if (!result) {
-      return res.status(404).json({ message: 'Prescription image not found' });
+      return res.status(404).send({ message: 'Prescription image not found' });
     }
 
     res.set('Content-Type', result.contentType);
@@ -42,14 +42,14 @@ preisRouter.delete("/files/:id", async (req, res) => {
   PresctiptionmModel.findByIdAndDelete(req.params.id, (err, result) => {
     if (err) {
       console.error(err);
-      return res.status(500).json({ message: 'Error deleting prescription image from database' });
+      return res.status(500).send({ message: 'Error deleting prescription image from database' });
     }
 
     if (!result) {
-      return res.status(404).json({ message: 'Prescription image not found' });
+      return res.status(404).send({ message: 'Prescription image not found' });
     }
 
-    res.status(200).json({ message: 'Prescription image deleted' });
+    res.status(200).send({ message: 'Prescription image deleted' });
   });
 });
 
