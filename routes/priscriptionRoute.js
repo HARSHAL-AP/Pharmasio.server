@@ -12,7 +12,7 @@ preisRouter.post("/upload", upload.single("file"), async (req, res) => {
     data: buffer,
     contentType: mimetype,
   });
-  prescriptionImage.save((err, result) => {
+  await prescriptionImage.save((err, result) => {
     if (err) {
       console.error(err);
       return res.status(500).json({ message: 'Error saving prescription image to database' });
