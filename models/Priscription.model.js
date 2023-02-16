@@ -15,7 +15,7 @@ const preiscriptionSchema = new mongoose.Schema({
   },
 });
 
-const PresctiptionmModel = mongoose.model('Presctiption', preiscriptionSchema);
+const PresctiptionmModel = mongoose.model('presctiption', preiscriptionSchema);
 
 module.exports = {
     PresctiptionmModel
