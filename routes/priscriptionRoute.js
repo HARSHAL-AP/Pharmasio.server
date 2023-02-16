@@ -1,43 +1,56 @@
 const express = require("express");
 const multer = require("multer");
+
 const { PresctiptionmModel } = require("../models/Priscription.model");
 const preisRouter = express.Router();
 const upload = multer({ storage: multer.memoryStorage() });
 
 preisRouter.post("/upload", upload.single("file"), async (req, res) => {
-  const file = new PresctiptionmModel({
-    name: req.file.originalname,
-    data: req.file.buffer,
+  const { buffer, mimetype } = req.file;
+  
+  const prescriptionImage = new PresctiptionmModel({
+    data: buffer,
+    contentType: mimetype,
   });
+  prescriptionImage.save((err, result) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({ message: 'Error saving prescription image to database' });
+    }
 
-  await file.save();
-  res.send("File uploaded successfully");
+    res.status(200).json({ id: result._id });
+  });
 });
 
 preisRouter.get("/files/:id", async (req, res) => {
-  const file = await PresctiptionmModel.findById(req.params.id);
+  PresctiptionmModel.findById(req.params.id, (err, result) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({ message: 'Error retrieving prescription image from database' });
+    }
 
-  if (!file) {
-    return res.status(404).send("File not found");
-  }
+    if (!result) {
+      return res.status(404).json({ message: 'Prescription image not found' });
+    }
 
-  res.set("Content-Type", file.contentType);
-  res.send(file.data);
+    res.set('Content-Type', result.contentType);
+    res.send(result.data);
+  });
 });
 
 preisRouter.delete("/files/:id", async (req, res) => {
-  const file = await PresctiptionmModel.findByIdAndDelete(req.params.id);
+  PresctiptionmModel.findByIdAndDelete(req.params.id, (err, result) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({ message: 'Error deleting prescription image from database' });
+    }
 
-  if (!file) {
-    return res.status(404).send("File not found");
-  }
+    if (!result) {
+      return res.status(404).json({ message: 'Prescription image not found' });
+    }
 
-  res.send("File deleted successfully");
-});
-
-preisRouter.get("/files", async (req, res) => {
-  const files = await PresctiptionmModel.find();
-  res.send(files);
+    res.status(200).json({ message: 'Prescription image deleted' });
+  });
 });
 
 
