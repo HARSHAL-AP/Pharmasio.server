@@ -1,0 +1,875 @@
+[
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109022.jpg",
+    "title": "Starfresh Tomato",
+    "saleprice": 25,
+    "category": "fruit_and_vegitable",
+    "price": 26,
+    "discount": 32,
+    "rating": 77
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109006.jpg",
+    "title": "Starfresh Onion Red",
+    "saleprice": 21,
+    "category": "fruit_and_vegitable",
+    "price": 22,
+    "discount": 45,
+    "rating": 21
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ106728.jpg",
+    "title": "Star Coriander Bunch",
+    "saleprice": 10,
+    "category": "fruit_and_vegitable",
+    "price": 11,
+    "discount": 44,
+    "rating": 76
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ101374.jpg",
+    "title": "Star Cabbage",
+    "saleprice": 12,
+    "category": "fruit_and_vegitable",
+    "price": 13,
+    "discount": 33,
+    "rating": 100
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ101373.jpg",
+    "title": "Star Cauliflower 1 Pc",
+    "saleprice": 26,
+    "category": "fruit_and_vegitable",
+    "price": 27,
+    "discount": 48,
+    "rating": 52
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109019.jpg",
+    "title": "Starfresh Potato",
+    "saleprice": 24,
+    "category": "fruit_and_vegitable",
+    "price": 25,
+    "discount": 41,
+    "rating": 78
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ105228.jpg",
+    "title": "Star Spinach Bunch",
+    "saleprice": 10,
+    "category": "fruit_and_vegitable",
+    "price": 11,
+    "discount": 57,
+    "rating": 8
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109015.jpg",
+    "title": "Starfresh Ginger",
+    "saleprice": 9,
+    "category": "fruit_and_vegitable",
+    "price": 10,
+    "discount": 50,
+    "rating": 42
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ106729.jpg",
+    "title": "Star Methi Leaves Bunch",
+    "saleprice": 14,
+    "category": "fruit_and_vegitable",
+    "price": 15,
+    "discount": 33,
+    "rating": 28
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109018.jpg",
+    "title": "Starfresh Lemon (5-7 Pcs)",
+    "saleprice": 22,
+    "category": "fruit_and_vegitable",
+    "price": 23,
+    "discount": 21,
+    "rating": 63
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109056.jpg",
+    "title": "Starfresh Capsicum Green",
+    "saleprice": 12,
+    "category": "fruit_and_vegitable",
+    "price": 13,
+    "discount": 33,
+    "rating": 19
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ114254.jpg",
+    "title": "Starfresh Bottle Guard",
+    "saleprice": 19,
+    "category": "fruit_and_vegitable",
+    "price": 20,
+    "discount": 17,
+    "rating": 20
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ106742.jpg",
+    "title": "Star Button Mushroom Prepacked",
+    "saleprice": 32,
+    "category": "fruit_and_vegitable",
+    "price": 33,
+    "discount": 33,
+    "rating": 34
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ106730.jpg",
+    "title": "Star Coconut",
+    "saleprice": 20,
+    "category": "fruit_and_vegitable",
+    "price": 21,
+    "discount": 39,
+    "rating": 20
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109082.jpg",
+    "title": "Starfresh Pumpkin Red",
+    "saleprice": 11,
+    "category": "fruit_and_vegitable",
+    "price": 12,
+    "discount": 35,
+    "rating": 74
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109011.jpg",
+    "title": "Starfresh Green Chilli Dark",
+    "saleprice": 9,
+    "category": "fruit_and_vegitable",
+    "price": 10,
+    "discount": 36,
+    "rating": 78
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ106871.jpg",
+    "title": "Star Sweet Corn Prepacked",
+    "saleprice": 14,
+    "category": "fruit_and_vegitable",
+    "price": 15,
+    "discount": 33,
+    "rating": 66
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ100249.jpg",
+    "title": "Starfresh Apple Shimla",
+    "saleprice": 125,
+    "category": "fruit_and_vegitable",
+    "price": 126,
+    "discount": 16,
+    "rating": 32
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ161295.jpg",
+    "title": "Starfresh Broccoli",
+    "saleprice": 29,
+    "category": "fruit_and_vegitable",
+    "price": 30,
+    "discount": 19,
+    "rating": 99
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109037.jpg",
+    "title": "Starfresh Beetroot",
+    "saleprice": 9,
+    "category": "fruit_and_vegitable",
+    "price": 10,
+    "discount": 0.02,
+    "rating": 18
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109007.jpg",
+    "title": "Starfresh Onion Red",
+    "saleprice": 42,
+    "category": "fruit_and_vegitable",
+    "price": 43,
+    "discount": 44,
+    "rating": 22
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109167.jpg",
+    "title": "Starfresh French Bush Beans",
+    "saleprice": 14,
+    "category": "fruit_and_vegitable",
+    "price": 15,
+    "discount": 36,
+    "rating": 91
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109374.jpg",
+    "title": "Starfresh Watermelon Sugar Queen",
+    "saleprice": 44,
+    "category": "fruit_and_vegitable",
+    "price": 45,
+    "discount": 43,
+    "rating": 51
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ152918.jpg",
+    "title": "Star Potato Prepacked",
+    "saleprice": 42,
+    "category": "fruit_and_vegitable",
+    "price": 43,
+    "discount": 42,
+    "rating": 95
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ112210.jpg",
+    "title": "Star Grapes Sonaka Green Prem..",
+    "saleprice": 39,
+    "category": "fruit_and_vegitable",
+    "price": 40,
+    "discount": 50,
+    "rating": 77
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ105237.jpg",
+    "title": "Star Mint Leaves Bunch",
+    "saleprice": 9,
+    "category": "fruit_and_vegitable",
+    "price": 10,
+    "discount": 36,
+    "rating": 93
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109069.jpg",
+    "title": "Starfresh Cucumber White",
+    "saleprice": 14,
+    "category": "fruit_and_vegitable",
+    "price": 15,
+    "discount": 22,
+    "rating": 71
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ114256.jpg",
+    "title": "Starfresh Brinjal Bharta",
+    "saleprice": 27,
+    "category": "fruit_and_vegitable",
+    "price": 28,
+    "discount": 21,
+    "rating": 99
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109004.jpg",
+    "title": "Starfresh Bhindi",
+    "saleprice": 23,
+    "category": "fruit_and_vegitable",
+    "price": 24,
+    "discount": 32,
+    "rating": 33
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109016.jpg",
+    "title": "Starfresh Ginger",
+    "saleprice": 23,
+    "category": "fruit_and_vegitable",
+    "price": 24,
+    "discount": 48,
+    "rating": 64
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109039.jpg",
+    "title": "Starfresh Bitter Gourd Green",
+    "saleprice": 16,
+    "category": "fruit_and_vegitable",
+    "price": 17,
+    "discount": 43,
+    "rating": 63
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ114325.jpg",
+    "title": "Star Onion Prepacked",
+    "saleprice": 95,
+    "category": "fruit_and_vegitable",
+    "price": 96,
+    "discount": 42,
+    "rating": 91
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109162.jpg",
+    "title": "Starfresh Green Chilli Light",
+    "saleprice": 10,
+    "category": "fruit_and_vegitable",
+    "price": 11,
+    "discount": 41,
+    "rating": 22
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ112208.jpg",
+    "title": "Star Grapes Sharad Premium",
+    "saleprice": 49,
+    "category": "fruit_and_vegitable",
+    "price": 50,
+    "discount": 53,
+    "rating": 4
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109017.jpg",
+    "title": "Starfresh Lemon (2-3 Pcs)",
+    "saleprice": 9,
+    "category": "fruit_and_vegitable",
+    "price": 10,
+    "discount": 18,
+    "rating": 22
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ108374.jpg",
+    "title": "Star Spring Onion Prepacked",
+    "saleprice": 12,
+    "category": "fruit_and_vegitable",
+    "price": 13,
+    "discount": 50,
+    "rating": 45
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109024.jpg",
+    "title": "Starfresh Tomato",
+    "saleprice": 49,
+    "category": "fruit_and_vegitable",
+    "price": 50,
+    "discount": 32,
+    "rating": 22
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ105232.jpg",
+    "title": "Star Curry Leaves Bunch",
+    "saleprice": 14,
+    "category": "fruit_and_vegitable",
+    "price": 15,
+    "discount": 33,
+    "rating": 79
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109527.jpg",
+    "title": "Starfresh Orange Kinnow",
+    "saleprice": 82,
+    "category": "fruit_and_vegitable",
+    "price": 83,
+    "discount": 30,
+    "rating": 8
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109005.jpg",
+    "title": "Starfresh Bhindi",
+    "saleprice": 45,
+    "category": "fruit_and_vegitable",
+    "price": 46,
+    "discount": 33,
+    "rating": 28
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109057.jpg",
+    "title": "Starfresh Capsicum Green",
+    "saleprice": 24,
+    "category": "fruit_and_vegitable",
+    "price": 25,
+    "discount": 33,
+    "rating": 25
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109123.jpg",
+    "title": "Starfresh Garlic",
+    "saleprice": 23,
+    "category": "fruit_and_vegitable",
+    "price": 24,
+    "discount": 48,
+    "rating": 29
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ162132.jpg",
+    "title": "Starfresh Banana Robusta About",
+    "saleprice": 22,
+    "category": "fruit_and_vegitable",
+    "price": 23,
+    "discount": 27,
+    "rating": 40
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109050.jpg",
+    "title": "Starfresh Brinjal Violet Small",
+    "saleprice": 13,
+    "category": "fruit_and_vegitable",
+    "price": 14,
+    "discount": 7,
+    "rating": 23
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109009.jpg",
+    "title": "Starfresh Carrot Orange (Bangalore)",
+    "saleprice": 13,
+    "category": "fruit_and_vegitable",
+    "price": 14,
+    "discount": 35,
+    "rating": 84
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ106873.jpg",
+    "title": "Star Baby Corn Peeled Prepack..",
+    "saleprice": 24,
+    "category": "fruit_and_vegitable",
+    "price": 25,
+    "discount": 33,
+    "rating": 78
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109074.jpg",
+    "title": "Starfresh Green Peas",
+    "saleprice": 22,
+    "category": "fruit_and_vegitable",
+    "price": 23,
+    "discount": 42,
+    "rating": 36
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109168.jpg",
+    "title": "Starfresh French Bush Beans",
+    "saleprice": 28,
+    "category": "fruit_and_vegitable",
+    "price": 29,
+    "discount": 36,
+    "rating": 38
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ111726.jpg",
+    "title": "Starfresh Tomato Country",
+    "saleprice": 31,
+    "category": "fruit_and_vegitable",
+    "price": 32,
+    "discount": 16,
+    "rating": 68
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109526.jpg",
+    "title": "Starfresh Orange Kinnow",
+    "saleprice": 65,
+    "category": "fruit_and_vegitable",
+    "price": 66,
+    "discount": 29,
+    "rating": 73
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109034.jpg",
+    "title": "Starfresh Beans Cluster",
+    "saleprice": 25,
+    "category": "fruit_and_vegitable",
+    "price": 26,
+    "discount": 32,
+    "rating": 79
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ153300.jpg",
+    "title": "Dream Farm Lettuce Iceberg",
+    "saleprice": 22,
+    "category": "fruit_and_vegitable",
+    "price": 23,
+    "discount": 33,
+    "rating": 5
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109118.jpg",
+    "title": "Starfresh Capsicum Yellow",
+    "saleprice": 66,
+    "category": "fruit_and_vegitable",
+    "price": 67,
+    "discount": 25,
+    "rating": 37
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109020.jpg",
+    "title": "Starfresh Potato",
+    "saleprice": 47,
+    "category": "fruit_and_vegitable",
+    "price": 48,
+    "discount": 43,
+    "rating": 36
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ161532.jpg",
+    "title": "Starfresh Muskmelon Chandani About",
+    "saleprice": 29,
+    "category": "fruit_and_vegitable",
+    "price": 30,
+    "discount": 36,
+    "rating": 36
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109058.jpg",
+    "title": "Starfresh Cucumber Green",
+    "saleprice": 52,
+    "category": "fruit_and_vegitable",
+    "price": 53,
+    "discount": 17,
+    "rating": 1
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109116.jpg",
+    "title": "Starfresh Capsicum Red",
+    "saleprice": 66,
+    "category": "fruit_and_vegitable",
+    "price": 67,
+    "discount": 25,
+    "rating": 20
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109061.jpg",
+    "title": "Starfresh Coccinea",
+    "saleprice": 28,
+    "category": "fruit_and_vegitable",
+    "price": 29,
+    "discount": 32,
+    "rating": 51
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109038.jpg",
+    "title": "Starfresh Beetroot",
+    "saleprice": 18,
+    "category": "fruit_and_vegitable",
+    "price": 18,
+    "discount": 0,
+    "rating": 69
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ102252.jpg",
+    "title": "Star Garlic Peeled Prepacked",
+    "saleprice": 24,
+    "category": "fruit_and_vegitable",
+    "price": 25,
+    "discount": 33,
+    "rating": 61
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109070.jpg",
+    "title": "Starfresh Cucumber White",
+    "saleprice": 28,
+    "category": "fruit_and_vegitable",
+    "price": 29,
+    "discount": 24,
+    "rating": 77
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109099.jpg",
+    "title": "Starfresh Sweet Potato",
+    "saleprice": 23,
+    "category": "fruit_and_vegitable",
+    "price": 24,
+    "discount": 67,
+    "rating": 26
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ108376.jpg",
+    "title": "Star Onion Prepacked",
+    "saleprice": 38,
+    "category": "fruit_and_vegitable",
+    "price": 39,
+    "discount": 42,
+    "rating": 86
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ111717.jpg",
+    "title": "Starfresh Shalajam (Turnip)",
+    "saleprice": 13,
+    "category": "fruit_and_vegitable",
+    "price": 14,
+    "discount": 35,
+    "rating": 47
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109036.jpg",
+    "title": "Starfresh Beetroot",
+    "saleprice": 35,
+    "category": "fruit_and_vegitable",
+    "price": 36,
+    "discount": 5,
+    "rating": 62
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109515.jpg",
+    "title": "Star Gooseberry (Amla Big) Pr..",
+    "saleprice": 47,
+    "category": "fruit_and_vegitable",
+    "price": 48,
+    "discount": 24,
+    "rating": 26
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ102873.jpg",
+    "title": "Star Dragon Fruit",
+    "saleprice": 79,
+    "category": "fruit_and_vegitable",
+    "price": 80,
+    "discount": 28,
+    "rating": 12
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109032.jpg",
+    "title": "Starfresh Beans Broad (Ghevada)",
+    "saleprice": 14,
+    "category": "fruit_and_vegitable",
+    "price": 15,
+    "discount": 52,
+    "rating": 74
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109060.jpg",
+    "title": "Starfresh Cucumber Green",
+    "saleprice": 26,
+    "category": "fruit_and_vegitable",
+    "price": 27,
+    "discount": 21,
+    "rating": 33
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109010.jpg",
+    "title": "Starfresh Carrot Orange (Bangalore)",
+    "saleprice": 26,
+    "category": "fruit_and_vegitable",
+    "price": 27,
+    "discount": 35,
+    "rating": 90
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109066.jpg",
+    "title": "Starfresh Beans Cowpea",
+    "saleprice": 16,
+    "category": "fruit_and_vegitable",
+    "price": 17,
+    "discount": 36,
+    "rating": 36
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109131.jpg",
+    "title": "Starfresh Sapota Round",
+    "saleprice": 32,
+    "category": "fruit_and_vegitable",
+    "price": 33,
+    "discount": 55,
+    "rating": 80
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109372.jpg",
+    "title": "Starfresh Pomegranate Red",
+    "saleprice": 162,
+    "category": "fruit_and_vegitable",
+    "price": 163,
+    "discount": 31,
+    "rating": 88
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ155008.jpg",
+    "title": "Star Baby Potato Prepacked",
+    "saleprice": 24,
+    "category": "fruit_and_vegitable",
+    "price": 25,
+    "discount": 33,
+    "rating": 42
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ150298.jpg",
+    "title": "Starfresh Bottle Guard",
+    "saleprice": 28,
+    "category": "fruit_and_vegitable",
+    "price": 29,
+    "discount": 15,
+    "rating": 38
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ156538.jpg",
+    "title": "Star Grapes Red ( Flame)",
+    "saleprice": 65,
+    "category": "fruit_and_vegitable",
+    "price": 66,
+    "discount": 52,
+    "rating": 79
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109012.jpg",
+    "title": "Starfresh Green Chilli Dark",
+    "saleprice": 22,
+    "category": "fruit_and_vegitable",
+    "price": 23,
+    "discount": 39,
+    "rating": 19
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ105235.jpg",
+    "title": "Star Amaranthus Red Leaves Bu..",
+    "saleprice": 16,
+    "category": "fruit_and_vegitable",
+    "price": 17,
+    "discount": 33,
+    "rating": 76
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109122.jpg",
+    "title": "Starfresh Garlic",
+    "saleprice": 10,
+    "category": "fruit_and_vegitable",
+    "price": 11,
+    "discount": 44,
+    "rating": 4
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109362.jpg",
+    "title": "Starfresh Banana Yellaki",
+    "saleprice": 126,
+    "category": "fruit_and_vegitable",
+    "price": 127,
+    "discount": 35,
+    "rating": 100
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109358.jpg",
+    "title": "Starfresh Banana Robusta",
+    "saleprice": 40,
+    "category": "fruit_and_vegitable",
+    "price": 41,
+    "discount": 29,
+    "rating": 62
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ106737.jpg",
+    "title": "Star Mix Sprout Prepacked",
+    "saleprice": 30,
+    "category": "fruit_and_vegitable",
+    "price": 31,
+    "discount": 33,
+    "rating": 49
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109114.jpg",
+    "title": "Starfresh Chilli Pikador Green",
+    "saleprice": 9,
+    "category": "fruit_and_vegitable",
+    "price": 10,
+    "discount": 47,
+    "rating": 95
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109124.jpg",
+    "title": "Starfresh Garlic",
+    "saleprice": 46,
+    "category": "fruit_and_vegitable",
+    "price": 47,
+    "discount": 47,
+    "rating": 51
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ111695.jpg",
+    "title": "Starfresh Guava Red",
+    "saleprice": 65,
+    "category": "fruit_and_vegitable",
+    "price": 66,
+    "discount": 29,
+    "rating": 72
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109068.jpg",
+    "title": "Starfresh Cucumber White",
+    "saleprice": 56,
+    "category": "fruit_and_vegitable",
+    "price": 57,
+    "discount": 22,
+    "rating": 27
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109096.jpg",
+    "title": "Starfresh Sponge Gourd",
+    "saleprice": 32,
+    "category": "fruit_and_vegitable",
+    "price": 33,
+    "discount": 27,
+    "rating": 9
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109513.jpg",
+    "title": "Starfresh Fresh Fig",
+    "saleprice": 69,
+    "category": "fruit_and_vegitable",
+    "price": 70,
+    "discount": 23,
+    "rating": 60
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109104.jpg",
+    "title": "Starfresh Yam (Suran)",
+    "saleprice": 19,
+    "category": "fruit_and_vegitable",
+    "price": 20,
+    "discount": 27,
+    "rating": 95
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109289.jpg",
+    "title": "Starfresh Mini Bitter Gourd",
+    "saleprice": 16,
+    "category": "fruit_and_vegitable",
+    "price": 17,
+    "discount": 43,
+    "rating": 29
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109030.jpg",
+    "title": "Starfresh Beans Broad (Valor Papad..",
+    "saleprice": 12,
+    "category": "fruit_and_vegitable",
+    "price": 13,
+    "discount": 40,
+    "rating": 25
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ106860.jpg",
+    "title": "Star Pineapple Large",
+    "saleprice": 52,
+    "category": "fruit_and_vegitable",
+    "price": 53,
+    "discount": 40,
+    "rating": 38
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109081.jpg",
+    "title": "Starfresh Pumpkin Red",
+    "saleprice": 6,
+    "category": "fruit_and_vegitable",
+    "price": 7,
+    "discount": 33,
+    "rating": 5
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ112166.jpg",
+    "title": "Starfresh Cherry Tomatoes",
+    "saleprice": 16,
+    "category": "fruit_and_vegitable",
+    "price": 17,
+    "discount": 47,
+    "rating": 98
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109051.jpg",
+    "title": "Starfresh Brinjal Violet Small",
+    "saleprice": 26,
+    "category": "fruit_and_vegitable",
+    "price": 27,
+    "discount": 48,
+    "rating": 8
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109377.jpg",
+    "title": "Starfresh Papaya Disco",
+    "saleprice": 76,
+    "category": "fruit_and_vegitable",
+    "price": 77,
+    "discount": 48,
+    "rating": 82
+  },
+  {
+    "image": "https://media.starquik.com/catalog/product/SQ109098.jpg",
+    "title": "Starfresh Sweet Potato",
+    "saleprice": 12,
+    "category": "fruit_and_vegitable",
+    "price": 13,
+    "discount": 67,
+    "rating": 19
+  }
+]

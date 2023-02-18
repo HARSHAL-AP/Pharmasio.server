@@ -7,13 +7,15 @@ const farmerProductSchema = mongoose.Schema({
   category: String,
   price: Number,
   discount: Number,
-  subcategory: String,
+
   rating: Number,
 });
 
-const FarmerProductModel = mongoose.model("farmerproducts", farmerProductSchema);
+const FarmerProductModel = mongoose.model(
+  "farmerproducts",
+  farmerProductSchema
+);
 
 module.exports = {
-    FarmerProductModel
+  FarmerProductModel,
 };
- 
