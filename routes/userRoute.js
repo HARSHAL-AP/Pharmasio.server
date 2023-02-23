@@ -119,6 +119,21 @@ userRoute.patch("/updateuser/:id",userauthonticate, async (req, res) => {
   }
 });
 
+userRoute.get("/getall",async (req,res)=>{
+try {
+   const data = UserModel.find()
+   res.send(data)
+
+
+} catch (error) {
+  console.log(error)
+  return res.status(404).send({message:"User Data Not Found...."})
+}
+
+
+
+})
+
 module.exports = {
   userRoute,
 };
