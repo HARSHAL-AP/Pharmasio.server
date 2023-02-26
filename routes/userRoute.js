@@ -8,8 +8,8 @@ require("dotenv").config();
 
 const userRoute = express.Router();
 
-userRoute.get("/getall", adminauthonticate, async (req, res) => {
-  const data = UserModel.find();
+userRoute.get("/getall", async (req, res) => {
+  const data =await UserModel.find();
   res.send(data);
 });
 userRoute.post("/register", async (req, res) => {
