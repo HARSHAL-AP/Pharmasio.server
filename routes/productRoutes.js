@@ -144,6 +144,17 @@ productRouter.delete("/remove/:id",adminauthonticate, async (req, res) => {
     res.send({ msg: "Smothing went Wrong" });
   }
 });
+productRouter.get("/getall",adminauthonticate, async (req, res) => {
+  
+
+  try {
+   let data= await ProductModel.find();
+    res.send(data);
+  } catch (error) {
+    console.log(error);
+    res.send({ msg: "Smothing went Wrong" });
+  }
+});
 
 
 module.exports={

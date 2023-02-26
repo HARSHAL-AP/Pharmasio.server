@@ -113,7 +113,7 @@ adminRoute.patch("/updateuser/:id", async (req, res) => {
 });
 
 
-adminRoute.get("/adminall",async (req,res)=>{
+adminRoute.get("/adminall",adminauthonticate ,async(req,res)=>{
   
  try {
    const data=await AdminModel.find()

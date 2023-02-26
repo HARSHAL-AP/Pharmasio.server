@@ -1,6 +1,6 @@
 const express = require("express");
 const multer = require("multer");
-
+const {adminauthonticate}=require("../midlewere/adminauth.middlewere")
 const { PresctiptionmModel } = require("../models/Priscription.model");
 const preisRouter = express.Router();
 const upload = multer({ storage: multer.memoryStorage() });
@@ -53,7 +53,17 @@ preisRouter.delete("/files/:id", async (req, res) => {
   });
 });
 
+preisRouter.get("/getall",adminauthonticate, async (req, res) => {
+  
 
+  try {
+   let data= await PresctiptionmModel.find();
+    res.send(data);
+  } catch (error) {
+    console.log(error);
+    res.send({ msg: "Smothing went Wrong" });
+  }
+});
 module.exports={
     preisRouter
 }
