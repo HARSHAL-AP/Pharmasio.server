@@ -8,6 +8,12 @@ require("dotenv").config();
 
 const userRoute = express.Router();
 
+
+userRoute.get("/getall",adminauthonticate,async (req,res)=>{
+
+  const data = UserModel.find()
+  res.send(data)
+})
 userRoute.post("/register", async (req, res) => {
   const {
     first_name,
@@ -120,20 +126,7 @@ userRoute.patch("/updateuser/:id",userauthonticate, async (req, res) => {
   }
 });
 
-userRoute.get("/getall",adminauthonticate,async (req,res)=>{
-try {
-   const data = UserModel.find()
-   res.send(data)
 
-
-} catch (error) {
-  console.log(error)
-  return res.status(404).send({message:"User Data Not Found...."})
-}
-
-
-
-})
 
 module.exports = {
   userRoute,
