@@ -3,6 +3,14 @@ const {adminauthonticate}=require("../midlewere/adminauth.middlewere")
 const { ProductModel } = require("../models/Product.model");
 const productRouter = express.Router();
 
+productRouter.get("/getall", async (req, res) => {
+  
+
+  const data =await  ProductModel.find();
+  res.send(data);
+});
+
+
 productRouter.get("/:category", async (req, res) => {
   const category = req.params.category;
   const page = req.query.page || 1;
@@ -139,17 +147,6 @@ productRouter.delete("/remove/:id",adminauthonticate, async (req, res) => {
   try {
     await ProductModel.findByIdAndDelete({ _id: id });
     res.send("Deleted The Product");
-  } catch (error) {
-    console.log(error);
-    res.send({ msg: "Smothing went Wrong" });
-  }
-});
-productRouter.get("/getall", async (req, res) => {
-  
-
-  try {
-   let data= await ProductModel.find();
-    res.send(data);
   } catch (error) {
     console.log(error);
     res.send({ msg: "Smothing went Wrong" });
