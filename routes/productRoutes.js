@@ -144,7 +144,7 @@ productRouter.delete("/remove/:id",adminauthonticate, async (req, res) => {
     res.send({ msg: "Smothing went Wrong" });
   }
 });
-productRouter.get("/getall",adminauthonticate, async (req, res) => {
+productRouter.get("/getall", async (req, res) => {
   
 
   try {
