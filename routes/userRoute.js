@@ -2,18 +2,16 @@ const express = require("express");
 const { UserModel } = require("../models/User.model");
 const bycript = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const {userauthonticate}=require("../midlewere/authonticate.middleware")
-const {adminauthonticate} =require("../midlewere/adminauth.middlewere")
+const { userauthonticate } = require("../midlewere/authonticate.middleware");
+const { adminauthonticate } = require("../midlewere/adminauth.middlewere");
 require("dotenv").config();
 
 const userRoute = express.Router();
 
-
-userRoute.get("/getall",adminauthonticate,async (req,res)=>{
-
-  const data = UserModel.find()
-  res.send(data)
-})
+userRoute.get("/getall", adminauthonticate, async (req, res) => {
+  const data = UserModel.find();
+  res.send(data);
+});
 userRoute.post("/register", async (req, res) => {
   const {
     first_name,
@@ -70,7 +68,7 @@ userRoute.post("/login", async (req, res) => {
       bycript.compare(password, hashed_pass, (err, result) => {
         if (result) {
           const token = jwt.sign({ userID: user[0]._id }, process.env.key);
-          console.log(token)
+          console.log(token);
           res.send({
             msg: "Login Successfull",
             token: token,
@@ -103,7 +101,7 @@ userRoute.post("/login", async (req, res) => {
   }
 });
 
-userRoute.delete("/deletuser/:id",userauthonticate, async (req, res) => {
+userRoute.delete("/deletuser/:id", userauthonticate, async (req, res) => {
   const id = req.params.id;
   console.log(id);
   try {
@@ -114,7 +112,7 @@ userRoute.delete("/deletuser/:id",userauthonticate, async (req, res) => {
     res.send({ msg: "Smothing went Wrong" });
   }
 });
-userRoute.patch("/updateuser/:id",userauthonticate, async (req, res) => {
+userRoute.patch("/updateuser/:id", userauthonticate, async (req, res) => {
   const id = req.params.id;
   const payload = req.body;
   try {
@@ -125,8 +123,6 @@ userRoute.patch("/updateuser/:id",userauthonticate, async (req, res) => {
     res.send({ msg: "Smothing went Wrong" });
   }
 });
-
-
 
 module.exports = {
   userRoute,

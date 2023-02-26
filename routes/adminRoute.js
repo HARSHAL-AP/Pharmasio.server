@@ -6,7 +6,15 @@ require("dotenv").config();
 const {adminauthonticate} =require("../midlewere/adminauth.middlewere")
 const adminRoute = express.Router();
 
+adminRoute.get("/adminall",async(req,res)=>{
+  
 
+  const data=await AdminModel.find()
+  res.send(data)
+
+
+
+})
 
 adminRoute.post("/login", async (req, res) => {
   const { email, password } = req.body;
@@ -113,19 +121,7 @@ adminRoute.patch("/updateuser/:id", async (req, res) => {
 });
 
 
-adminRoute.get("/adminall",adminauthonticate ,async(req,res)=>{
-  
- try {
-   const data=await AdminModel.find()
-   res.send(data)
 
-
- } catch (error) {
-  console.log(error)
-  return res.status(404).send({ message: 'Admin Data not Found....' });
- }
-
-})
 module.exports = {
   adminRoute,
 };
