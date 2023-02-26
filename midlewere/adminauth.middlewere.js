@@ -3,8 +3,8 @@ require("dotenv").config();
 
 const adminauthonticate=(req,res,next)=> {
   const token=req.headers.authorization
-  const isAdmin=req.headers.isAdmin
-  if(token&&isAdmin){
+  
+  if(token){
     const decode=jwt.verify(token,process.env.key)
     if(decode){
         const userId=decode.userId
