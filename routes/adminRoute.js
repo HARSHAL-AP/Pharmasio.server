@@ -9,13 +9,13 @@ const adminRoute = express.Router();
 
 
 adminRoute.post("/login", async (req, res) => {
-  const { email, pass } = req.body;
-  console.log(email, pass);
+  const { email, password } = req.body;
+  console.log(email, password);
   try {
     const user = await AdminModel.find({ email });
-    const hashed_pass = user[0].pass;
+    const hashed_pass = user[0].password;
     if (user.length > 0) {
-      bycript.compare(pass, hashed_pass, (err, result) => {
+      bycript.compare(password, hashed_pass, (err, result) => {
         if (result) {
           const token = jwt.sign({ userID: user[0]._id }, process.env.key);
           res.send({ msg: "Login Successfulll", token: token });
