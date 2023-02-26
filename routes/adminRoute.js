@@ -20,7 +20,16 @@ adminRoute.post("/login", async (req, res) => {
           const token = jwt.sign({ userID: user[0]._id }, process.env.key);
           res.send({ msg: "Login Successfulll", token: token });
         } else {
-          res.send({ msg: "Wrong Credentials", Succsess: false });
+          res.send({ msg: "Wrong Credentials", Succsess: false,Succsess: true,
+        User: {
+            first_name: user[0].first_name,
+            last_name: user[0].last_name,
+            gender: user[0].gender,
+            birthdate: user[0].birthdate,
+            address: user[0].address,
+            
+          
+          } });
         }
       });
     } else {
