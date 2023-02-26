@@ -48,7 +48,7 @@ adminRoute.post("/register",adminauthonticate, async (req, res) => {
   const admindata=await AdminModel.find({email:email,phone_number:phone_number})
   if(admindata.length===0){
     try {
-      bycript.hash(pass, 5, async (err, secure_password) => {
+      bycript.hash(password, 5, async (err, secure_password) => {
         if (err) {
           console.log(err);
         } else {
