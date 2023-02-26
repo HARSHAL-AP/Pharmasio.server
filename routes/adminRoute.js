@@ -18,9 +18,7 @@ adminRoute.post("/login", async (req, res) => {
       bycript.compare(password, hashed_pass, (err, result) => {
         if (result) {
           const token = jwt.sign({ userID: user[0]._id }, process.env.key);
-          res.send({ msg: "Login Successfulll", token: token });
-        } else {
-          res.send({ msg: "Wrong Credentials", Succsess: false,Succsess: true,
+          res.send({ msg: "Login Successfulll", token: token,Succsess: true,
         User: {
             first_name: user[0].first_name,
             last_name: user[0].last_name,
@@ -29,7 +27,9 @@ adminRoute.post("/login", async (req, res) => {
             address: user[0].address,
             
           
-          } });
+          }  });
+        } else {
+          res.send({ msg: "Wrong Credentials", Succsess: false});
         }
       });
     } else {
