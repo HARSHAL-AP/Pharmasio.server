@@ -93,7 +93,17 @@ farmRouter.delete("/remove/:id",adminauthonticate, async (req, res) => {
   }
 });
 
+farmRouter.get("/getall",adminauthonticate, async (req, res) => {
+  
 
+  try {
+   let data= await FarmerProductModel.find();
+    res.send(data);
+  } catch (error) {
+    console.log(error);
+    res.send({ msg: "Smothing went Wrong" });
+  }
+});
 module.exports={
     farmRouter
 }

@@ -3,6 +3,7 @@ const { UserModel } = require("../models/User.model");
 const bycript = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const {userauthonticate}=require("../midlewere/authonticate.middleware")
+const {adminauthonticate} =require("../midlewere/adminauth.middlewere")
 require("dotenv").config();
 
 const userRoute = express.Router();
@@ -119,7 +120,7 @@ userRoute.patch("/updateuser/:id",userauthonticate, async (req, res) => {
   }
 });
 
-userRoute.get("/getall",async (req,res)=>{
+userRoute.get("/getall",adminauthonticate,async (req,res)=>{
 try {
    const data = UserModel.find()
    res.send(data)

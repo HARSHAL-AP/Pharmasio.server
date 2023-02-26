@@ -95,6 +95,18 @@ drugRouter.delete("/remove/:id",adminauthonticate, async (req, res) => {
   }
 });
 
+drugRouter.get("/getall",adminauthonticate, async (req, res) => {
+  
+
+  try {
+   let data= await DrugsModel.find();
+    res.send(data);
+  } catch (error) {
+    console.log(error);
+    res.send({ msg: "Smothing went Wrong" });
+  }
+});
+
 
 module.exports={
     drugRouter
