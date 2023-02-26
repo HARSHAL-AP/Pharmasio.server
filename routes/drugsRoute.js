@@ -95,7 +95,7 @@ drugRouter.delete("/remove/:id",adminauthonticate, async (req, res) => {
   }
 });
 
-drugRouter.get("/getall",adminauthonticate, async (req, res) => {
+drugRouter.get("/getall", async (req, res) => {
   
 
   try {
