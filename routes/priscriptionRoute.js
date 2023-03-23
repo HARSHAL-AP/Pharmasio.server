@@ -53,7 +53,7 @@ preisRouter.delete("/files/:id", async (req, res) => {
   });
 });
 
-preisRouter.get("/getall",adminauthonticate, async (req, res) => {
+preisRouter.get("/getall", async (req, res) => {
   
 
   try {
