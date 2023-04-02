@@ -1,4 +1,5 @@
 const express=require("express")
+
 const {connection}=require("./config/db")
 const {userRoute}=require("./routes/userRoute")
 const {adminRoute}=require("./routes/adminRoute")
