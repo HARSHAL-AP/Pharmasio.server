@@ -15,7 +15,7 @@ drugRouter.get("/:alphabet", async (req, res) => {
 
   try {
     const data = await DrugsModel.find({
-      drug_name: { $regex: "^" + alphabet },
+      name: { $regex: "^" + alphabet },
     })
       .skip((page - 1) * limit)
       .limit(limit);
@@ -29,7 +29,7 @@ drugRouter.get("/search", async (req, res) => {
   if (req.query.name != undefined) {
     try {
       let searchdata = await DrugsModel.find({
-        drug_name: { $regex: "^" + req.query.name },
+        name: { $regex: "^" + req.query.name },
       });
 
       res.send(searchdata);
@@ -57,7 +57,7 @@ drugRouter.get("/byid/:id", async (req, res) => {
   }
 });
 
-drugRouter.post("/create", adminauthonticate, async (req, res) => {
+drugRouter.post("/create",  async (req, res) => {
   const payload = req.body;
   try {
     const new_products = new DrugsModel(payload);
